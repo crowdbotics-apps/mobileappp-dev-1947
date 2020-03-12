@@ -15,6 +15,13 @@ class User(AbstractUser):
         blank=True,
         related_name="user_newwww",
     )
+    neww = models.ForeignKey(
+        "home.CustomText",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="user_neww",
+    )
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
