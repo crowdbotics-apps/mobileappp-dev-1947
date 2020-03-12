@@ -8,29 +8,47 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0004_remove_customtext_testing'),
-        ('users', '0002_auto_20200312_0647'),
+        ("home", "0004_remove_customtext_testing"),
+        ("users", "0002_auto_20200312_0647"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='user',
-            name='new',
+            model_name="user",
+            name="new",
             field=models.BigIntegerField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='user',
-            name='neww',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user_neww', to='home.CustomText'),
+            model_name="user",
+            name="neww",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_neww",
+                to="home.CustomText",
+            ),
         ),
         migrations.AddField(
-            model_name='user',
-            name='newww',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user_newww', to='home.HomePage'),
+            model_name="user",
+            name="newww",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_newww",
+                to="home.HomePage",
+            ),
         ),
         migrations.AddField(
-            model_name='user',
-            name='newwww',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user_newwww', to=settings.AUTH_USER_MODEL),
+            model_name="user",
+            name="newwww",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_newwww",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]
